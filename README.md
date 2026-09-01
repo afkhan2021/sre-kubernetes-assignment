@@ -101,7 +101,7 @@ sre-kubernetes-app:1.2
 4. Deploy to Kubernetes
 ./scripts/deploy.sh
 
-Verify:
+Verify the deployment:
 
 kubectl get pods -n sre-assignment
 kubectl get services -n sre-assignment
@@ -161,23 +161,13 @@ Load average
 
 The collected information is stored in PostgreSQL and displayed by the web application.
 
-Check the CronJob:
-
+Check the CronJob
 kubectl get cronjob -n sre-assignment
-
-Manually trigger a test:
-
-kubectl create job \
-  --from=cronjob/system-info-collector \
-  cronjob-test \
-  -n sre-assignment
-
-View logs:
-
+Manually Trigger a Test
+kubectl create job --from=cronjob/system-info-collector cronjob-test -n sre-assignment
+View Logs
 kubectl logs job/cronjob-test -n sre-assignment
-
-Clean up:
-
+Clean Up the Test Job
 kubectl delete job cronjob-test -n sre-assignment
 PostgreSQL
 
@@ -202,7 +192,7 @@ Maximum replicas	5
 CPU target	70%
 HPA API	autoscaling/v2
 
-Check HPA:
+Check the HPA:
 
 kubectl get hpa -n sre-assignment
 Scalability Test
@@ -217,7 +207,7 @@ After the load was removed and the stabilization period elapsed:
 
 4 replicas → 2 replicas
 
-This demonstrates horizontal scaling under increased load.
+This demonstrates that the web application can scale horizontally under increased load.
 
 Self-Healing
 
@@ -251,35 +241,34 @@ The required comment was added to the application:
 # I completed the assignment.
 Validation
 Test	Result
-Kubernetes cluster	✅ Passed
-PostgreSQL StatefulSet	✅ Passed
-Persistent storage	✅ Passed
-System information collection	✅ Passed
-Kubernetes CronJob	✅ Passed
-Web application	✅ Passed
-Browser access	✅ Passed
-Database connectivity	✅ Passed
-HPA scale-up	✅ Passed
-HPA scale-down	✅ Passed
-Pod self-healing	✅ Passed
-Health endpoint	✅ Passed
-Readiness endpoint	✅ Passed
+Kubernetes cluster	Passed
+PostgreSQL StatefulSet	Passed
+Persistent storage	Passed
+System information collection	Passed
+Kubernetes CronJob	Passed
+Web application	Passed
+Browser access	Passed
+Database connectivity	Passed
+HPA scale-up	Passed
+HPA scale-down	Passed
+Pod self-healing	Passed
+Health endpoint	Passed
+Readiness endpoint	Passed
 Useful Commands
-# View all resources
+View All Resources
 kubectl get all -n sre-assignment
-
-# View pods
+View Pods
 kubectl get pods -n sre-assignment
-
-# View HPA
+View HPA
 kubectl get hpa -n sre-assignment
-
-# View CronJob
+View CronJob
 kubectl get cronjob -n sre-assignment
-
-# View resource usage
+View Resource Usage
 kubectl top pods -n sre-assignment
 Cleanup
+
+To remove the Kubernetes resources created for this assignment:
+
 ./scripts/cleanup.sh
 Design Considerations
 
