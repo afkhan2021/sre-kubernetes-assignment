@@ -240,30 +240,36 @@ The required comment was added to the application:
 
 # I completed the assignment.
 Validation
-Test	Result
-Kubernetes cluster	Passed
-PostgreSQL StatefulSet	Passed
-Persistent storage	Passed
-System information collection	Passed
-Kubernetes CronJob	Passed
-Web application	Passed
-Browser access	Passed
-Database connectivity	Passed
-HPA scale-up	Passed
-HPA scale-down	Passed
-Pod self-healing	Passed
-Health endpoint	Passed
-Readiness endpoint	Passed
+
+The following tests were completed successfully:
+
+ Kubernetes cluster
+ PostgreSQL StatefulSet
+ Persistent storage
+ System information collection
+ Kubernetes CronJob
+ Web application
+ Browser access
+ Database connectivity
+ HPA scale-up
+ HPA scale-down
+ Pod self-healing
+ Health endpoint
+ Readiness endpoint
 Useful Commands
-View All Resources
+# View all resources
 kubectl get all -n sre-assignment
-View Pods
+
+# View pods
 kubectl get pods -n sre-assignment
-View HPA
+
+# View HPA
 kubectl get hpa -n sre-assignment
-View CronJob
+
+# View CronJob
 kubectl get cronjob -n sre-assignment
-View Resource Usage
+
+# View resource usage
 kubectl top pods -n sre-assignment
 Cleanup
 
