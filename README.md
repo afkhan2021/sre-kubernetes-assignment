@@ -29,15 +29,16 @@ The application runs locally using **Colima + K3s Kubernetes**.
 ```
 
 ## Components
-Component	Purpose
-FastAPI	Web application and REST API
-PostgreSQL 16	Persistent backend data store
-Kubernetes CronJob	Collects system information every 6 hours
-Deployment	Runs the web application
-Horizontal Pod Autoscaler	Scales web pods from 2 to 5 replicas
-NodePort Service	Provides browser access on the local machine
-PersistentVolumeClaim	Provides persistent PostgreSQL storage
-Kubernetes Secret	Stores database credentials
+| Component | Purpose |
+|---|---|
+| FastAPI | Web application and REST API |
+| PostgreSQL 16 | Persistent backend data store |
+| Kubernetes CronJob | Collects system information every 6 hours |
+| Deployment | Runs the web application |
+| Horizontal Pod Autoscaler | Scales web pods from 2 to 5 replicas |
+| NodePort Service | Provides browser access on the local machine |
+| PersistentVolumeClaim | Provides persistent PostgreSQL storage |
+| Kubernetes Secret | Stores database credentials |
 ## Project Structure
 sre-kubernetes-assignment/
 ├── app/
@@ -188,11 +189,12 @@ PostgreSQL is exposed only internally through a Kubernetes ClusterIP Service.
 The web application is designed to scale horizontally.
 
 ### HPA Configuration
-Setting	Value
-Minimum replicas	2
-Maximum replicas	5
-CPU target	70%
-HPA API	autoscaling/v2
+| Setting | Value |
+|---|---:|
+| Minimum replicas | 2 |
+| Maximum replicas | 5 |
+| CPU target | 70% |
+| HPA API | `autoscaling/v2` |
 
 Check the HPA:
 
@@ -242,20 +244,21 @@ The required comment was added to the application:
 
 # I completed the assignment.
 ## Validation
-Test	Result
-Kubernetes cluster	Passed
-PostgreSQL StatefulSet	Passed
-Persistent storage	Passed
-System information collection	Passed
-Kubernetes CronJob	Passed
-Web application	Passed
-Browser access	Passed
-Database connectivity	Passed
-HPA scale-up	Passed
-HPA scale-down	Passed
-Pod self-healing	Passed
-Health endpoint	Passed
-Readiness endpoint	Passed
+| Test | Result |
+|---|---|
+| Kubernetes cluster | Passed |
+| PostgreSQL StatefulSet | Passed |
+| Persistent storage | Passed |
+| System information collection | Passed |
+| Kubernetes CronJob | Passed |
+| Web application | Passed |
+| Browser access | Passed |
+| Database connectivity | Passed |
+| HPA scale-up | Passed |
+| HPA scale-down | Passed |
+| Pod self-healing | Passed |
+| Health endpoint | Passed |
+| Readiness endpoint | Passed |
 ## Useful Commands
 ### View All Resources
 kubectl get all -n sre-assignment
