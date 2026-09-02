@@ -4,23 +4,7 @@ A small Kubernetes-based application that periodically collects system informati
 
 ## Architecture
 
-The application runs locally using **Colima + K3s Kubernetes**.
-
-    macOS Laptop
-          |
-    Colima / K3s
-          |
-    +-----+----------------------+
-    |                            |
-    v                            v
-    Web Application        Kubernetes CronJob
-    2-5 replicas           System Collector
-    |                            |
-    |                            v
-    +----------------------> PostgreSQL
-                               |
-                               v
-                              PVC
+![SRE Kubernetes Assignment Architecture](docs/architecture.drawio.png)
 
 ## Components
 
