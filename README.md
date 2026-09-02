@@ -6,6 +6,19 @@ A small Kubernetes-based application that periodically collects system informati
 
 ![SRE Kubernetes Assignment Architecture](docs/architecture.drawio.png)
 
+## Deployment Verification
+
+The application was successfully deployed and verified after a clean deployment.
+
+![Final Deployment Snapshot](docs/final_snapshot.png)
+
+## HPA Test
+
+The Horizontal Pod Autoscaler was validated by generating CPU load. The HPA automatically scaled the web deployment from 2 replicas to 5 replicas 
+and subsequently scaled back down to 2 replicas after the load was removed.
+
+![HPA Scaling Test](docs/hpa-test.png)
+
 ## Components
 
 | Component | Purpose |
